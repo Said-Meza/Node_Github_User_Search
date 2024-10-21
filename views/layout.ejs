@@ -1,0 +1,150 @@
+<%- include('header.ejs') %>
+    
+<header class="hero container">
+
+    <div class="hero__header">
+        
+        <h3 class="hero__logo">Devs_alv</h3>
+        
+        <div class="hero__dark darkmode">
+
+            <a class="hero__dark__btn" href="#" > 
+
+                <span class="hero__span" id="modetxt">LIGHT</span>
+
+                <figure class="hero__figure">
+                    <img class="hero__img" src="../img/sun.svg" alt="light">
+                </figure>     
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<main class="main container">
+
+<section class="main__form">
+
+        <form class="form__form" method="post" >
+
+            <div class="form__search">
+            
+                <figure class="form__figure">
+                    <img class="form__icon" src="../img/lupa.svg" alt="Search">
+                </figure>
+            
+                <input class="form__search__input" type="search" name="txtsearch" id="txtsearch" autocomplete="off" required placeholder="Search GitHub username...">
+            
+                <button class="form__btn">Search</button>
+            
+            </div>
+
+        </form>
+
+</section>
+
+
+
+<section class="main__content">
+
+    <section class="main__user container">
+        <figure class="user__figure">
+            <img class="user__img" id="user_img" src=<%= (data.avatar_url)?data.avatar_url:"../img/792435-min.jpg" %> alt="user">
+        </figure>
+
+        <section class="user__inf">
+            
+            <div class="user__inf__name">
+                <h3 class="inf__name" id="inf__name" > <%= (data.name)?data.name:"Jardani Jovanovich" %></h3>
+                <h5 class="inf__username" id="username"><%= (data.login)?data.login:"Jonh Wick" %></h5>
+            </div>
+
+            
+
+            <p class="user__date" id="date_start"> joined <%= (fecha)?fecha:"Not inf" %></p>
+        
+        </section>
+
+        <section class="main__bio container">
+             <p class="main__paragraph" id="main__paragraph"><%= (data.bio)?data.bio:"People keep asking if I'm back, and I haven't really had an answer. But now, yeah, I'm thinking I'm back." %>
+            </p>
+        </section>
+
+    </section>
+
+
+    <section class="main__data container">
+
+            <div class="conteiner">
+                <h3 class="data__inf">Repos</h3>
+                <h2 class="data__number" id="repos"><%= (data.public_repos)?data.public_repos:"33" %> </h2>
+            </div>
+
+            <div class="conteiner">
+                <h3 class="data__inf">Followers</h3>
+                <h2 class="data__number" id="followers"><%= (data.followers)?data.followers:"3456" %></h2>
+            </div>
+
+            <div class="conteiner">
+                <h3 class="data__inf">Following</h3>
+                <h2 class="data__number" id="followings"><%= (data.following)?data.following:"33" %></h2>
+            </div>
+        
+        </section>
+        
+        
+    <section class="main__more container">
+    
+   
+        <div class="more_container">
+
+            <div class="more__inf">
+            
+                <figure class="more__figure">
+                    <img class="more__img" src="../img/gps.svg" alt="location">
+                </figure>
+
+                <p class="more__text" id="gps"><%= (data.location)?data.location:"Bielorrusia" %></p>
+            
+            </div>
+            
+            <div class="more__inf">
+                <figure class="more__figure">
+                    <img class="more__img" src="../img/enlace.svg" alt="location">
+                </figure>
+                <a href="<%= (data.html_url)?data.html_url:"#" %>" class="more__text more__text__a" id="github">htps://github.blog</a>
+            </div>
+
+        </div>
+
+
+        <div class="more_container ">
+
+            <div class="more__inf">
+                <figure class="more__figure">
+                    <img class="more__img" src="../img/x.svg" alt="location">
+                </figure>
+                <p class="more__text" id="x"><%= (data.twitter_username)?data.twitter_username:"@Jonh_Wick" %></p>
+            </div>
+            
+            <div class="more__inf">
+                <figure class="more__figure">
+                    <img class="more__img" src="../img/home.svg" alt="location">
+                </figure>
+                <a href="<%= (data.blog)?data.blog:"#" %>" class="more__text more__text__a" id="home">@Blog</a>
+            </div>
+
+        </div>
+
+
+    </section>
+
+</section>
+
+
+
+</main>
+<%- include('footer.ejs') %>
